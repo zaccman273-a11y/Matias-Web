@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Matias Web</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: #111;
+            text-align: center;
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            background: darkblue;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: white;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            padding: 90px 20px;
+            background: white;
+        }
+
+        .hero h1 {
+            color: darkblue;
+            font-size: 48px;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            width: 650px;
+            max-width: 90%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            margin: 35px auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        }
+
+        .button {
+            display: inline-block;
+            background: blue;
+            color: white;
+            padding: 13px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: darkblue;
+        }
+
+
+        /* SERVICES */
+
+        .services {
+            padding: 80px 20px;
+            background: lightblue;
+        }
+
+        .services h2 {
+            color: darkblue;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .service-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .service {
+            background: white;
+            width: 280px;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-8px);
+        }
+
+        .service h3 {
+            color: darkblue;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .service p {
+            line-height: 1.6;
+        }
+
+
+        /* PRICING */
+
+        .pricing {
+            padding: 80px 20px;
+            background: #f4f6ff;
+        }
+
+        .pricing h2 {
+            color: darkblue;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .pricing-subtitle {
+            font-size: 18px;
+            margin-bottom: 45px;
+        }
+
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .price-card {
+            background: white;
+            width: 290px;
+            padding: 35px 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .price-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .price-card h3 {
+            color: darkblue;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .price-card h4 {
+            color: blue;
+            font-size: 27px;
+            margin-bottom: 20px;
+        }
+
+        .price-card p {
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .price-card button {
+            background: blue;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 7px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .price-card button:hover {
+            background: darkblue;
+        }
+
+
+        /* PORTFOLIO */
+
+        .portfolio {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .portfolio h2 {
+            color: darkblue;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-subtitle {
+            font-size: 18px;
+            margin-bottom: 45px;
+        }
+
+        .portfolio-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .portfolio-card {
+            width: 320px;
+            background: #f4f6ff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-content {
+            padding: 25px;
+        }
+
+        .portfolio-card h3 {
+            color: darkblue;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-card p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-card span {
+            display: inline-block;
+            background: darkblue;
+            color: white;
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+
+        /* ABOUT */
+
+        .about {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .about h2 {
+            color: darkblue;
+            font-size: 35px;
+            margin-bottom: 25px;
+        }
+
+        .about p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+
+        /* CONTACT */
+
+        .contact {
+            padding: 80px 20px;
+            background: lightblue;
+        }
+
+        .contact h2 {
+            color: darkblue;
+            font-size: 35px;
+            margin-bottom: 25px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-button {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .telegram {
+            background: #229ED9;
+        }
+
+        .instagram {
+            background: #E1306C;
+        }
+
+        .social-button:hover {
+            transform: translateY(-3px);
+            opacity: 0.85;
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: darkblue;
+            color: white;
+            padding: 30px 20px;
+        }
+
+        footer p {
+            margin: 8px;
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav h2 {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-image {
+                height: 250px;
+            }
+
+            .service,
+            .price-card,
+            .portfolio-card {
+                width: 90%;
+                max-width: 350px;
+            }
+
+        }
+
+   /* Portfolio image click effect */
+.portfolio-card img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card img:hover {
+    transform: scale(1.03);
+}
+
+/* Fullscreen image viewer */
+.image-viewer {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.image-viewer img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.close-viewer {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-viewer:hover {
+    color: red;
+} .portfolio-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.portfolio-card img {
+    transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover img {
+    transform: scale(1.08);
+}/* 📱 Mobile Responsive Design */
+@media (max-width: 768px) {
+
+    /* Navigation */
+    nav {
+        padding: 12px 15px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav h2 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    nav a {
+        font-size: 15px;
+        margin: 0 5px;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 70px 20px;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    /* Sections */
+    section {
+        padding: 50px 15px;
+    }
+
+    section h2 {
+        font-size: 30px;
+    }
+
+    /* Services */
+    .services-container,
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Portfolio */
+    .portfolio-container,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .portfolio-card {
+        width: 100%;
+    }
+
+    .portfolio-card img {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    /* Pricing */
+    .pricing-container,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Contact */
+    .contact {
+        padding: 50px 20px;
+    }
+
+    .contact h2 {
+        font-size: 30px;
+    }
+
+    .contact p {
+        font-size: 16px;
+    }
+
+    /* Fullscreen image */
+    .image-viewer img {
+        max-width: 94%;
+        max-height: 75%;
+    }
+
+    .close-viewer {
+        top: 15px;
+        right: 20px;
+        font-size: 42px;
+    }
+}
+
+/* 📱 Small phones */
+@media (max-width: 480px) {
+
+    nav a {
+        font-size: 13px;
+        margin: 0 3px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    .portfolio-card h3 {
+        font-size: 22px;
+    }
+
+    .portfolio-card p {
+        font-size: 15px;
+    }
+}</style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <h2>Matias Web 🚀</h2>
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#pricing">Pricing</a>
+
+        <a href="#portfolio">Portfolio</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <h1>Welcome to Matias Web 🚀</h1>
+
+        <p>
+            I create modern websites for businesses
+            and entrepreneurs.
+        </p>
+
+        <a href="#services" class="button">
+            Get Started
+        </a>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services" id="services">
+
+        <h2>My Services</h2>
+
+        <div class="service-container">
+
+            <div class="service">
+
+                <h3>💻 Website Design</h3>
+
+                <p>
+                    I create modern and responsive
+                    websites for businesses.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>🎨 Graphic Design</h3>
+
+                <p>
+                    I create posters, logos and
+                    social media designs.
+                </p>
+
+            </div>
+
+
+            <div class="service">
+
+                <h3>📱 Social Media</h3>
+
+                <p>
+                    I help businesses create
+                    attractive social media content.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRICING -->
+
+    <section class="pricing" id="pricing">
+
+        <h2>My Pricing 💰</h2>
+
+        <p class="pricing-subtitle">
+            Simple prices for quality digital services.
+        </p>
+
+        <div class="pricing-container">
+
+
+            <div class="price-card">
+
+                <h3>💻 Website Design</h3>
+
+                <h4>1,500+ Birr</h4>
+
+                <p>
+                    Modern and responsive websites
+                    for businesses.
+                </p>
+
+                <button onclick="orderService('Website Design')">
+                    Order Now
+                </button>
+
+            </div>
+
+
+            <div class="price-card">
+
+                <h3>🎨 Graphic Design</h3>
+
+                <h4>300+ Birr</h4>
+
+                <p>
+                    Posters, logos and social media
+                    designs.
+                </p>
+
+                <button onclick="orderService('Graphic Design')">
+                    Order Now
+                </button>
+
+            </div>
+
+
+            <div class="price-card">
+
+                <h3>📱 Social Media</h3>
+
+                <h4>200+ Birr</h4>
+
+                <p>
+                    Attractive social media content
+                    and designs.
+                </p>
+
+                <button onclick="orderService('Social Media')">
+                    Order Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PORTFOLIO -->
+
+    <section class="portfolio" id="portfolio">
+
+        <h2>My Work 💼</h2>
+
+        <p class="portfolio-subtitle">
+            Some of the projects I have worked on.
+        </p>
+
+        <div class="portfolio-container">
+
+
+            <!-- TG SUPERMARKET -->
+
+            <div class="portfolio-card">
+
+                <img
+                    src="tg-supermarket.png"
+                    alt="TG Supermarket project"
+                >
+
+                <div class="portfolio-content">
+
+                    <h3>TG Supermarket</h3>
+
+                    <p>
+                        A modern supermarket website
+                        for selling different products.
+                    </p>
+
+                    <span>🌐 Website Design</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUSINESS LOGO -->
+
+            <div class="portfolio-card">
+
+                <img
+                    src="business-logo.png"
+                    alt="Business logo project"
+                >
+
+                <div class="portfolio-content">
+
+                    <h3>Business Logo</h3>
+
+                    <p>
+                        A simple and modern logo design
+                        for a business.
+                    </p>
+
+                    <span>🎨 Graphic Design</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SOCIAL MEDIA -->
+
+            <div class="portfolio-card">
+
+                <img
+                    src="social-media-design.png"
+                    alt="Social media design project"
+                >
+
+                <div class="portfolio-content">
+
+                    <h3>Social Media Design</h3>
+
+                    <p>
+                        Creative designs for businesses
+                        and social media pages.
+                    </p>
+
+                    <span>📱 Social Media</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <h2>About Me</h2>
+
+        <p>
+            My name is Matias. I am a young entrepreneur
+            from Ethiopia who is learning web development
+            and business. My goal is to create useful
+            websites and help businesses grow online.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+        <h2>Contact Me</h2>
+
+        <p>
+            Want a website for your business?
+            Get in touch with me!
+        </p>
+
+        <div class="social-links">
+
+            <a
+                href="https://t.me/BROKENWINGS_12"
+                target="_blank"
+                class="social-button telegram"
+            >
+                ✈️ Telegram
+            </a>
+
+            <a
+                href="https://www.instagram.com/tycoon_lux10/"
+                target="_blank"
+                class="social-button instagram"
+            >
+                📸 Instagram
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>© 2026 Matias Web</p>
+
+        <p>Built by Matias 🚀</p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function orderService(service) {
+
+            alert(
+                "Thank you! You selected: " + service
+            );
+
+        }
+
+    </script>
+
+
+<!-- Image Fullscreen Viewer -->
+<div id="imageViewer" class="image-viewer">
+    <span class="close-viewer">&times;</span>
+    <img id="largeImage" src="" alt="Large Project Image">
+</div>
+
+<script>
+const portfolioImages = document.querySelectorAll(".portfolio-card img");
+const imageViewer = document.getElementById("imageViewer");
+const largeImage = document.getElementById("largeImage");
+const closeViewer = document.querySelector(".close-viewer");
+
+portfolioImages.forEach(function(image) {
+    image.addEventListener("click", function() {
+        imageViewer.style.display = "flex";
+        largeImage.src = image.src;
+    });
+});
+
+closeViewer.addEventListener("click", function() {
+    imageViewer.style.display = "none";
+});
+
+imageViewer.addEventListener("click", function(event) {
+    if (event.target === imageViewer) {
+        imageViewer.style.display = "none";
+    }
+});
+</script>
+</body>
+
+</html>
